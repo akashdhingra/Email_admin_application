@@ -18,15 +18,29 @@ public class Email {
     {
         this.firstName = firstname;
         this.lastName = lastname;
-        System.out.println("Name is " + this.firstName + " " + this.lastName);
 
         this.Department = setDepartment();
+        System.out.println("Name: " + this.firstName + " " + this.lastName);
         System.out.println("Email ID : " + getEmailID());
         System.out.println("Department: " + this.Department);
         System.out.println("Mail Box capacity: " + setMailBoxCapacity() + " MB");
+        System.out.println("Password: " + getPassword(10));
     }
 
     // Generate a random password
+
+    private String getPassword(int passlength)
+    {
+        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
+        char ch[] = new char[passlength];
+        for (int i=0;i<passlength;i++)
+        {
+            int num = (int) (Math.random() * characters.length());
+            ch[i] = characters.charAt(num);
+        }
+        return new String(ch);
+
+    }
 
     // Ask for the department
     private String setDepartment()
