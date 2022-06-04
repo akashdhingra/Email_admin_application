@@ -1,5 +1,6 @@
 package emailapp;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Email {
@@ -10,7 +11,7 @@ public class Email {
     private String password;
     private String Department;
     private int mailboxCapacity = 500;
-    private String alternateEmail;
+    private String alternateEmail = "@gmail.com";
 
     // Constructor to receive first name and last name
     public Email(String firstname, String lastname)
@@ -20,6 +21,7 @@ public class Email {
         System.out.println("Name is " + this.firstName + " " + this.lastName);
 
         this.Department = setDepartment();
+        System.out.println("Email ID : " + getEmailID());
         System.out.println("Department: " + this.Department);
         System.out.println("Mail Box capacity: " + setMailBoxCapacity() + " MB");
     }
@@ -49,6 +51,11 @@ public class Email {
     }
 
     // Set the alternative email
+    private String getEmailID()
+    {
+        String email = this.firstName.toLowerCase() + this.lastName.toLowerCase() + this.alternateEmail;
+        return email;
+    }
 
     // Change the password
 
