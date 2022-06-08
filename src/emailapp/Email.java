@@ -11,7 +11,8 @@ public class Email {
     private String password;
     private String Department;
     private int mailboxCapacity = 500;
-    private String alternateEmail = "@gmail.com";
+    private String email;
+    private String alternateEmail;
 
     // Constructor to receive first name and last name
     public Email(String firstname, String lastname)
@@ -21,9 +22,10 @@ public class Email {
 
         this.Department = setDepartment();
         System.out.println("Name: " + this.firstName + " " + this.lastName);
-        System.out.println("Email ID : " + getEmailID());
+        email = this.firstName.toLowerCase() + this.lastName.toLowerCase() + "@" + this.Department + "company.com";
+        System.out.println("Email ID : " + email);
         System.out.println("Department: " + this.Department);
-        System.out.println("Mail Box capacity: " + setMailBoxCapacity() + " MB");
+        System.out.println("Mail Box capacity: " + this.mailboxCapacity + " MB");
         System.out.println("Password: " + getPassword(10));
     }
 
@@ -39,7 +41,6 @@ public class Email {
             ch[i] = characters.charAt(num);
         }
         return new String(ch);
-
     }
 
     // Ask for the department
@@ -59,18 +60,21 @@ public class Email {
     }
 
     // Set the mailbox capacity
-    private int setMailBoxCapacity()
+    public void setMailBoxCapacity(int capacity)
     {
-        return this.mailboxCapacity;
+        this.mailboxCapacity = capacity;
     }
 
     // Set the alternative email
-    private String getEmailID()
+    public void getEmailID(String alternateID)
     {
-        String email = this.firstName.toLowerCase() + this.lastName.toLowerCase() + this.alternateEmail;
-        return email;
+        this.alternateEmail = alternateID;
     }
 
     // Change the password
+    public void changePassword(String pass)
+    {
+        this.password = pass;
+    }
 
 }
