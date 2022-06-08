@@ -16,8 +16,10 @@ public class EmailApp{
 
         Email em1 = new Email(firstname,lastname);
         em1.showInfo();
-        em1.getEmailID("check@gmail.com");
-
+        em1.ChangeEmailID("check@gmail.com");
+        em1.changePassword("demo");
+        em1.setMailBoxCapacity(200);
+        em1.showInfo();
 
     }
 

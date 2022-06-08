@@ -12,7 +12,6 @@ public class Email {
     private String Department;
     private int mailboxCapacity = 500;
     private String email;
-    private String alternateEmail;
 
     // Constructor to receive first name and last name
     public Email(String firstname, String lastname)
@@ -64,9 +63,9 @@ public class Email {
     }
 
     // Set the alternative email
-    public void getEmailID(String alternateID)
+    public void ChangeEmailID(String alternateID)
     {
-        this.alternateEmail = alternateID;
+        this.email= alternateID;
     }
 
     // Change the password
