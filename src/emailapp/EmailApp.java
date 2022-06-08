@@ -16,6 +16,8 @@ public class EmailApp{
 
         Email em1 = new Email(firstname,lastname);
         em1.showInfo();
+        em1.getEmailID("check@gmail.com");
+
 
     }
 
