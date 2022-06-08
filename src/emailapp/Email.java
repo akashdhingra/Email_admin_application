@@ -22,11 +22,9 @@ public class Email {
 
         this.Department = setDepartment();
         System.out.println("Name: " + this.firstName + " " + this.lastName);
-        email = this.firstName.toLowerCase() + this.lastName.toLowerCase() + "@" + this.Department + "company.com";
-        System.out.println("Email ID : " + email);
-        System.out.println("Department: " + this.Department);
-        System.out.println("Mail Box capacity: " + this.mailboxCapacity + " MB");
         System.out.println("Password: " + getPassword(10));
+
+        email = this.firstName.toLowerCase() + this.lastName.toLowerCase() + "@" + this.Department.toLowerCase() + "company.com";
     }
 
     // Generate a random password
@@ -75,6 +73,13 @@ public class Email {
     public void changePassword(String pass)
     {
         this.password = pass;
+    }
+
+    public void showInfo()
+    {
+        System.out.println("Email ID : " + email);
+        System.out.println("Department: " + this.Department);
+        System.out.println("Mail Box capacity: " + this.mailboxCapacity + " MB");
     }
 
 }

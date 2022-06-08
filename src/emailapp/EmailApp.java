@@ -15,6 +15,8 @@ public class EmailApp{
         String lastname = sc.next();
 
         Email em1 = new Email(firstname,lastname);
+        em1.showInfo();
+
     }
 
 }
